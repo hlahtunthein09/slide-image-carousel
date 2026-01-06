@@ -3,15 +3,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";  
 
 const IMAGE_URLS = [
-    "/images/nayeon.jpg",
-    "/images/jeongyeon.jpg",
-    "/images/jihyo.jpg",
-    "/images/mina.jpg",
-    "/images/sana.jpg",
-    "/images/momo.jpg",
-    "/images/dahyun.jpg",
-    "/images/chaeyoung.jpg",
-    "/images/tzuyu.jpg"
+    "images/nayeon.jpg",
+    "images/jeongyeon.jpg",
+    "images/jihyo.jpg",
+    "images/mina.jpg",
+    "images/sana.jpg",
+    "images/momo.jpg",
+    "images/dahyun.jpg",
+    "images/chaeyoung.jpg",
+    "images/tzuyu.jpg"
 ]
 
 // Add the clone of the first image to the end and last to the beginning
@@ -29,7 +29,7 @@ function SlideImageCarousel()
         const actualIndex = (index - 1 + IMAGE_URLS.length) % IMAGE_URLS.length;
         const path = IMAGE_URLS[actualIndex];
 
-        if(!path) return "Loading...";
+        if(!path) return "";
 
         const nameOfImage = path.split("/").pop().split(".")[0];
         return nameOfImage.charAt(0).toUpperCase() + nameOfImage.slice(1);
@@ -104,7 +104,7 @@ function SlideImageCarousel()
                         {Slides.map((url, i) => (
                             
                             <img 
-                                key={i} src={url} alt = "member"
+                                key={i} src={`${import.meta.env.BASE_URL}${url}`} alt = "member"
                                 className="w-[300px] h-[400px] object-cover flex-shrink-0"
                             />
                         ))}
