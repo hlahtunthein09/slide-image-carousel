@@ -96,16 +96,18 @@ function SlideImageCarousel()
                     <FontAwesomeIcon icon={faChevronLeft} />
                 </button>
                 
-                <div className="w-[300px] h-[400px] mx-8 rounded-2xl overflow-hidden shadow-2xl">
+                <div className="w-[220px] h-[320px] md:w-[300px] md:h-[400px] mx-2 md:mx-8 rounded-2xl overflow-hidden shadow-2xl">
                     <div
-                        className={`flex ${isTransitioning ? "transition-transform duration-500 ease-in-out" : ""}`}
+                        className={`flex h-full ${isTransitioning ? "transition-transform duration-500 ease-in-out" : ""}`}
                         style={{ transform: `translateX(-${imageIndex * 100}%)` }}
                     >
                         {Slides.map((url, i) => (
                             
                             <img 
-                                key={i} src={`${import.meta.env.BASE_URL}${url}`} alt = "member"
-                                className="w-[300px] h-[400px] object-cover flex-shrink-0"
+                                key={i} 
+                                src={`${import.meta.env.BASE_URL}${url}`} 
+                                alt = "member"
+                                className="w-[220px] h-[320px] md:w-[300px] md:h-[400px] object-cover flex-shrink-0"
                             />
                         ))}
                     </div>
